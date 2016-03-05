@@ -3,7 +3,7 @@
 using namespace std;
 
 
-double ArraySum(int i)
+double ArraySum(int end,int begn)
 {
 	fstream fp("E:\\A.csv");
 	if (!fp)
@@ -11,7 +11,11 @@ double ArraySum(int i)
 		exit(1);
 	}
 	double m, sum = 0;
-	for (int n = 0; n < i; n++)
+	for (int t = 1; t < begn; t++)
+	{
+		fp >> m;
+	}
+	for (int n = begn; n <= end; n++)
 	{
 		fp >> m;
 		sum += m;
@@ -22,10 +26,8 @@ double ArraySum(int i)
 
 int main()
 {
-	int i;
-	double sum;
-	cin >> i;
-	sum = ArraySum(i);
-	cout << sum;
+	int begn,end;
+	cin >> begn>>end;
+	cout << ArraySum(end, begn);
 	return 1;
 }
