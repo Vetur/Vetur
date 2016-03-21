@@ -11,9 +11,9 @@ struct word
 
 int main()
 {
-	word a[100], n;
+	word a[100], n; //a中存不同单词，n为辅助
 	int  k = 0, h = 0;
-	char t, w[30], q[30];
+	char t, w[30], q[30]; //t中存当前输入字符，w为输入文本地址，q为输出文本地址
 	cout << "-f ";
 	cin>>w;
 	cout << ">";
@@ -27,9 +27,9 @@ int main()
 	{
 		int j = 0;
 		fp >> t;
-		if (!(t <= 'z' && t >= 'a') && !(t <= 'Z' && t >= 'A'))
+		if (!(t <= 'z' && t >= 'a') && !(t <= 'Z' && t >= 'A'))  //判断输入是否为单词
 			continue;
-		while ((t <= 'z' && t >= 'a') || (t <= 'Z' && t >= 'A'))
+		while ((t <= 'z' && t >= 'a') || (t <= 'Z' && t >= 'A'))  //存入单词
 		{
 			n.b[j] = t;
 			fp >> t;
@@ -43,7 +43,7 @@ int main()
 			}
 		}
 		n.b[j] = '\0';
-		for (h = 0; h < k; h++)
+		for (h = 0; h < k; h++)   //比较已有单词
 		{
 			if (!_stricmp(n.b, a[h].b))
 			{
@@ -51,13 +51,13 @@ int main()
 				break;
 			}
 		}
-		if (h == k)
+		if (h == k)    //单词不存在则存入
 		{
 			a[k] = n;
 			k++;
 		}
 	}
-	for (int i = 0; i<k; i++)
+	for (int i = 0; i<k; i++)     //按个数排序
 	{
 		word te;
 		int j;
@@ -70,7 +70,7 @@ int main()
 			}
 	}
 
-	for (int i = 0; i<k; i++)
+	for (int i = 0; i<k; i++)   //按字母表排序
 	{
 		word te;
 		int j,wo=0;
@@ -92,3 +92,4 @@ int main()
 		tp << a[f].b << '\t' << a[f].num << endl;
 	fp.close();
 	return 1;
+        }
