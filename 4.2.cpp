@@ -37,7 +37,7 @@ int main()
 		if (!_stricmp(n.b, a.b))        //比较单词
 			a.num++;
 	}
-	if (a.num == 0)
+	if (a.num != 0)
 		cout << a.b << '\t' << a.num << endl;
 	else
 		cout << "不存在"<<endl;
