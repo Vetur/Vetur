@@ -23,7 +23,7 @@ int main()
 	fp >> noskipws;
 	while (fp)
 	{
-		int j = 0;
+		int j = 0;                    //查找单词
 		fp >> t;
 		if (!(t <= 'z' && t >= 'a') && !(t <= 'Z' && t >= 'A'))
 			continue;
@@ -34,7 +34,7 @@ int main()
 			j++;
 		}
 		n.b[j] = '\0';
-		if (!_stricmp(n.b, a.b))
+		if (!_stricmp(n.b, a.b))        //比较单词
 			a.num++;
 	}
 	if (a.num == 0)
